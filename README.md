@@ -1,2 +1,2 @@
 # Iris-Flower-Classification
-Deep learning model that solves iris flower classification - 100% accuracy. Neural networks coded manually without machine learning frameworks.
+The Iris flower data set or Fisher's Iris data set is a multivariate data set that contains 50 samples from each of three species of Iris (Iris Setosa, Iris virginica, and Iris versicolor).
