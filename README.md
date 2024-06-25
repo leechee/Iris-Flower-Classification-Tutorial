@@ -1,10 +1,13 @@
 # Iris-Flower-Classification
 
-![Iris Flowers](assets/iris_flowers.png)
+![[Iris Flowers]|100](assets/iris_flowers.png)
 
-The Iris flower data set or Fisher's Iris data set is a multivariate data set that contains 50 samples from each of three species of Iris (Iris Setosa, Iris virginica, and Iris versicolor). In this project, I manually coded a deep learning model "under the hood" using a neural network to identify each species. The network is a multilayer perceptron with one hidden layer (model uses no machine learning frameworks).
+The Iris flower data set or Fisher's Iris data set is a multivariate data set that contains 50 samples from each of three species of Iris (Iris Setosa, Iris Virginica, and Iris Versicolor). 
 
-Included is a Jupyter Notebook that details the project step by step --> [here.](iris_classification.ipynb)
+Many coders jump straight into using machine learning frameworks (PyTorch, TensorFlow, Keras, Theano) without understanding what's happening "under the hood". In this project, I **manually** coded a deep learning model using a neural network to identify each species of Iris. The network is a multilayer perceptron with one hidden layer (two neurons), and 100% accuracy.
+
+## I created a Jupyter Notebook tutorial that details the project step by step --> [here](iris_classification.ipynb)
+Click [here](iris_classification_NN.py) for just the source code.
 
 The dataset contains a set of 150 records under 5 attributes:
 - Petal Length
@@ -14,7 +17,7 @@ The dataset contains a set of 150 records under 5 attributes:
 - Class(Species)
 
 ## Getting started
-#### Python Environment
+### Python Environment
 Download and install Python 3.8 or higher from the [official Python website](https://www.python.org/downloads/)
 
 Optional, but I would recommend creating a venv. For Windows installation:
@@ -28,7 +31,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Next, install the AI stack needed:
+Now install the necessary AI stack in the venv terminal. These libraries will aid with computational coding, data visualization, accuracy reports, preprocessing, etc.
 ```
 pip install numPy
 pip install matplotlib
@@ -36,6 +39,16 @@ pip install pandas
 pip install scikit-learn
 pip install seaborn
 ```
+Note: sklearn was **not** used to create the model or for supervised learning.
+For more details on how to use the libraries, visit the Jupyter Notebook I made [here](iris_classification.ipynb)
 
+### Data Input
+To input data from the Iris dataset, use the pandas library:
+```
+data = pd.read_csv('IRIS.csv')
+```
+
+### Data visualization
+In the [Jupyter Notebook](iris_classification.ipynb), there are more
 
 
