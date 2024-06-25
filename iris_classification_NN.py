@@ -18,7 +18,7 @@ class NeuralNetwork:
         self.learning_rate = learning_rate
 
         #random value declaration format: {output, input}
-        #intial randomized values before training for weights and biases
+        #initial randomized values before training for weights and biases
         self.weights = []
         self.weights.append(np.random.randn(self.n_hidden, self.n_input))
         self.weights.append(np.random.randn(self.n_outputs, self.n_hidden))
