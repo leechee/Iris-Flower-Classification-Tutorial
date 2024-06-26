@@ -16,7 +16,7 @@ In this project, I **hand-coded** a deep learning model using a neural network t
 ### I also created a Jupyter Notebook tutorial detailing the project step-by-step --> [**here**](iris_classification.ipynb)
 Click [here](iris_classification_NN.py) for just the source code.
 
-## Getting started
+## Getting Started
 ### Python Environment
 Download and install Python 3.8 or higher from the [official Python website](https://www.python.org/downloads/)
 
@@ -47,8 +47,8 @@ To input data from the Iris data set, use the pandas library:
 data = pd.read_csv('IRIS.csv')
 ```
 
-### Data visualization
-In the [Jupyter Notebook](iris_classification.ipynb), there are more plots/graphs. Here are just some important ones for data visualization:
+### Data Visualization
+In the Jupyter Notebook, there are more plots/graphs. Here I will just use a pairplot to summarize:
 
 Using [seaborn](https://seaborn.pydata.org) and [matplotlib.pyplot](https://matplotlib.org), create a pairplot. This graph visualizes the relationship between each pair of variables in the Iris data set. Since there are four inputs, you will notice the plot becomes a 4x4 with 16 plots in total.
 ```
@@ -57,14 +57,29 @@ plt.show()
 ```
 ![iris_pairplot](assets/pairplot.png)
 
-A boxplot is useful for understanding the distribution of data:
-```
-plt.figure(figsize=(12, 6))
-sns.boxplot(data = data, orient= 'h')
-plt.show()
-```
-![iris_boxplot](assets/boxplot.png)
+## Discussion of Results
+### Confusion Matrix
+A confusion matrix is a table used to evaluate the performance of my classification model. It provides a detailed breakdown of the actual versus predicted classifications, allowing us to see where the model is making correct and incorrect predictions.
 
-### Click [here](iris_classification.ipynb) to see the whole tutorial
+![iris_confusionMatrix](assets/confusion_matrix.png)
+
+As we can see, the confusion matrix of my neural network demonstrates 100% accuracy. There are zero misclassifications, and all instances of Setosa, Virginica, and Versicolor are correctly identified. In total, 30 entrees were tested, with the other 120 used for training. The code for the confusion matrix can be found [here.](iris_classification.ipynb)
+
+### Classification Report
+The classification report is another way of analyzing the deep learning behavior. It provides key metrics that evaluate the performance of the model, such as: precision, recall, and F1-score for each class, along with the overall accuracy.
+```
+              precision    recall  f1-score   support
+
+      setosa       1.00      1.00      1.00        10
+  versicolor       1.00      1.00      1.00         9
+   virginica       1.00      1.00      1.00        11
+
+    accuracy                           1.00        30
+   macro avg       1.00      1.00      1.00        30
+weighted avg       1.00      1.00      1.00        30
+```
+In the Jupyter Notebook, I go more in-depth about what these metrics mean.
+
+# Click [here](iris_classification.ipynb) to see the tutorial and explanations
 
 
