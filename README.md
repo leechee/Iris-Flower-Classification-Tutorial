@@ -59,9 +59,12 @@ plt.show()
 
 A boxplot is useful for understanding the distrubution of data:
 ```
+plt.figure(figsize=(12, 6))
+sns.boxplot(data = data, orient= 'h')
+plt.show()
+```
 ![iris_boxplot](assets/boxplot.png)
 
-```
-#### Click [here](iris_classification.ipynb) to see the whole tutorial
+### Click [here](iris_classification.ipynb) to see the whole tutorial
 
 
