@@ -59,8 +59,9 @@ plt.show()
 
 A boxplot is useful for understanding the distrubution of data:
 ```
+![iris_boxplot](assets/boxplot.png)
 
 ```
-Click [here](iris_classification.ipynb) to see the whole tutorial
+#### Click [here](iris_classification.ipynb) to see the whole tutorial
 
 
