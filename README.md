@@ -57,7 +57,7 @@ plt.show()
 ```
 ![iris_pairplot](assets/pairplot.png)
 
-A boxplot is useful for understanding the distrubution of data:
+A boxplot is useful for understanding the distribution of data:
 ```
 plt.figure(figsize=(12, 6))
 sns.boxplot(data = data, orient= 'h')

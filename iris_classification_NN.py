@@ -2,9 +2,29 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
+
+# Load and preprocess the dataset
+data = pd.read_csv('IrisClassification/IRIS.csv')
+X = data.drop(['species'], axis=1)
+y = data['species']
+
+# Encode labels and one-hot encode targets
+encoder = LabelEncoder()
+y_encoded = encoder.fit_transform(y)
+onehot_encoder = OneHotEncoder(sparse_output=False)
+y_onehot = onehot_encoder.fit_transform(y_encoded.reshape(-1, 1))
+
+# Split dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.2, random_state=42)
+
+# Standardize features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
 
 #declaring class variables
 class NeuralNetwork:
@@ -94,25 +114,6 @@ class NeuralNetwork:
 
         return all_errors
 
-# Load and preprocess the dataset
-data = pd.read_csv('IrisClassification/IRIS.csv')
-X = data.drop(['species'], axis=1)
-y = data['species']
-
-# Encode labels and one-hot encode targets
-encoder = LabelEncoder()
-y_encoded = encoder.fit_transform(y)
-onehot_encoder = OneHotEncoder(sparse_output=False)
-y_onehot = onehot_encoder.fit_transform(y_encoded.reshape(-1, 1))
-
-# Split dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.2, random_state=42)
-
-# Standardize features
-scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
-
 # Initialize neural network
 n_input = 4
 n_hidden = 2
@@ -140,3 +141,29 @@ for i in range(len(X_test)):
 y_test_labels = np.argmax(y_test, axis=1)
 accuracy = accuracy_score(y_test_labels, y_pred)
 print(f"Accuracy on test set: {accuracy * 100:.2f}%")
+
+# Confusion matrix
+cf_matrix = confusion_matrix(y_test_labels, y_pred)
+
+# Labels for the confusion matrix heatmap
+labels = ['Correct Classification', 'Misclassification', 'Misclassification', 
+          'Misclassification', 'Correct Classification', 'Misclassification', 
+          'Misclassification', 'Misclassification', 'Correct Classification']
+values = ['{0:0.0f}'.format(value) for value in cf_matrix.flatten()]
+annotations = [f'{v1}\n{v2}' for v1, v2 in zip(labels, values)]
+annotations = np.asarray(annotations).reshape(3, 3)
+
+# Axis labels for heatmap
+axxlabels = ['Predicted Setosa', 'Predicted Versicolor', 'Predicted Virginica']
+axylabels = ['Actual Setosa', 'Actual Versicolor', 'Actual Virginica']
+
+# Plotting the heatmap
+plt.figure(figsize=(10, 7))
+sns.heatmap(cf_matrix, annot=annotations, fmt='', xticklabels=axxlabels, yticklabels=axylabels)
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.show()
+
+# Classification report
+target_names = ['setosa', 'versicolor', 'virginica']
+print(classification_report(y_test_labels, y_pred, target_names=target_names))
