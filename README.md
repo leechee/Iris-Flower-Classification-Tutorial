@@ -9,9 +9,9 @@ The [data set](IRIS.csv) contains a set of 150 records under 5 attributes:
 
 ## Objective
 
-Many coders jump straight into using machine learning frameworks (PyTorch, TensorFlow, Keras, Theano) without understanding what's happening "under the hood". Nowadays, it's hard to even find the infamous Iris Classification solved without using such tools.
+Many coders jump straight into using machine learning frameworks (PyTorch, TensorFlow, Keras, Theano) without understanding what's happening "under the hood". Nowadays, it's hard to even find the infamous Iris Classification solved without using such tools. It's important we take the time to understand neural network fundamentals.
 
-In this project, I **hand-coded** a deep learning model using a neural network to identify each species of Iris. The network is a multilayer perceptron with one hidden layer (two neurons), coded with Python, and 100% accuracy.
+That's why this project, I **hand-coded** a deep learning model using a neural network to identify each species of Iris. The network is a multilayer perceptron with one hidden layer (two neurons), coded with Python, and 100% accuracy.
 
 ### I also created a Jupyter Notebook tutorial detailing the project step-by-step --> [**here**](iris_classification.ipynb)
 Click [here](iris_classification_NN.py) for just the source code.
