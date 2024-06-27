@@ -13,7 +13,7 @@ Many coders jump straight into using machine learning frameworks (PyTorch, Tenso
 
 That's why in this project, I created a Jupyter tutorial demonstrating how to **hand-code** a deep learning model that uses a neural network to identify each species of Iris. No machine learning frameworks were used to build the model itself. The network is a multilayer perceptron with one hidden layer (two neurons), coded with Python, and 100% accuracy.
 
-### After getting started, Jupyter Notebook tutorial detailing the project step-by-step --> [**here**](iris_classification.ipynb)
+### Jupyter Notebook tutorial detailing the project step-by-step --> [**here**](iris_classification.ipynb)
 Click [here](iris_classification_NN.py) for just the source code.
 
 ## Getting Started
