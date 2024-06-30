@@ -80,6 +80,6 @@ weighted avg       1.00      1.00      1.00        30
 ```
 In the Jupyter Notebook, I go more in-depth about what these metrics mean.
 
-# Click [here](iris_classification.ipynb) to see the tutorial and explanations
+# Click [here](iris_classification.ipynb) to see the tutorial + details
 
 
