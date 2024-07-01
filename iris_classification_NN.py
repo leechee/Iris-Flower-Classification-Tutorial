@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
 
 # Load and preprocess the dataset
-data = pd.read_csv('IrisClassification/IRIS.csv')
+data = pd.read_csv('Iris-flower-Classification/IRIS.csv')
 X = data.drop(['species'], axis=1)
 y = data['species']
 
