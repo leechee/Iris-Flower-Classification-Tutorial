@@ -31,7 +31,7 @@ class NeuralNetwork:
     def __init__(self, n_input, n_hidden, n_outputs, learning_rate):
         #setting seed ensures reproducibility
         np.random.seed(3)
-
+    
         self.n_input = n_input
         self.n_hidden = n_hidden
         self.n_outputs = n_outputs 
