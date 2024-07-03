@@ -42,9 +42,9 @@ pip install seaborn
 Note: sklearn was **not** used to create the model or for supervised learning. For more details on how I used libraries, visit the Jupyter Notebook tutorial I made [here.](iris_classification.ipynb)
 
 ### Data Input
-To input data from the Iris data set, use the pandas library:
+To input data from the Iris data set, make sure to replace ... with your correct file path. Use the pandas library:
 ```
-data = pd.read_csv('IRIS.csv')
+data = pd.read_csv('...\IRIS.csv')
 ```
 
 ### Data Visualization
