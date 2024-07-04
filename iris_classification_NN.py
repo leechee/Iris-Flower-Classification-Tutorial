@@ -7,6 +7,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder
 
+#setting seed ensures reproducibility
+np.random.seed(3)
+
 # Load and preprocess the dataset
 data = pd.read_csv('Iris-flower-Classification/IRIS.csv')
 X = data.drop(['species'], axis=1)
@@ -26,11 +29,9 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-#declaring class variables
+# Code for Neural Network Model
 class NeuralNetwork:
     def __init__(self, n_input, n_hidden, n_outputs, learning_rate):
-        #setting seed ensures reproducibility
-        np.random.seed(3)
     
         self.n_input = n_input
         self.n_hidden = n_hidden
